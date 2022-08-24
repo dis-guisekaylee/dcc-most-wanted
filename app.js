@@ -65,12 +65,14 @@ function mainMenu(person, people){
 /////////////////////////////////////////////////////////////////
 //#region 
 
+
+
 //nearly finished function used to search through an array of people to find matching first and last name and return a SINGLE person object.
 function searchByName(people){
   let firstName = promptFor("What is the person's first name?", autoValid);
   let lastName = promptFor("What is the person's last name?", autoValid);
 
-  let foundPerson = people.filter(function(potentialMatch){
+  let foundPerson = people.find(function(potentialMatch){
     if(potentialMatch.firstName === firstName && potentialMatch.lastName === lastName){
       return true;
     }
@@ -78,7 +80,7 @@ function searchByName(people){
       return false;
     }
   })
-  // TODO: find the person single person object using the name they entered.
+  // TODO: find the single person object using the name they entered.
   return foundPerson;
 }
 
